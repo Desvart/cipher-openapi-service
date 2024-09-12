@@ -1,5 +1,5 @@
-const express = require('express');
-const { encrypt } = require('../../domain/caesar-cipher');
+import express from 'express';
+import { encrypt } from '../../domain/caesar-cipher.js';
 
 const router = express.Router();
 
@@ -14,4 +14,4 @@ router.post('/encrypt', (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

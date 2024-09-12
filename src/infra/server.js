@@ -1,8 +1,12 @@
-const express = require('express');
-const path = require('path');
-const apiRoutes = require('../adapters/api/routes');
+import express from 'express';
+import path from 'path';
+import apiRoutes from '../adapters/api/routes.js';
+import { fileURLToPath } from 'url';
 
-function createServer() {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default function createServer() {
     const app = express();
 
     app.use(express.json());
@@ -12,5 +16,3 @@ function createServer() {
 
     return app;
 }
-
-module.exports = { createServer };

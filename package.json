@@ -1,8 +1,9 @@
 {
   "name": "cipher-openapi-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple cipher encryption service",
   "main": "src/app.js",
+  "type": "module",
   "scripts": {
     "start": "node src/app.js"
   },

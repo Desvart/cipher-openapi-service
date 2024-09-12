@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cipher Encryption</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-</head>
-<body>
-<h1>Caesar Cipher Encryption</h1>
-<form id="encryptForm">
-    <label for="text">Text to encrypt:</label>
-    <input type="text" id="text" required>
-    <br>
-    <label for="shift">Shift value (1-25):</label>
-    <input type="number" id="shift" min="1" max="25" required>
-    <br>
-    <button type="submit">Encrypt</button>
-</form>
-<p id="result"></p>
 
-<script>
-    document.getElementById('encryptForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const text = document.getElementById('text').value;
-        const shift = parseInt(document.getElementById('shift').value);
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cipher Encryption</title>
+    </head>
 
-        try {
-            const response = await axios.post('/encrypt', { text, shift });
-            document.getElementById('result').textContent = `Encrypted text: ${response.data.encryptedText}`;
-        } catch (error) {
-            document.getElementById('result').textContent = `Error: ${error.response.data.error}`;
-        }
-    });
-</script>
-</body>
+    <body>
+        <h1>Caesar Cipher Encryption</h1>
+        <form id="encryptForm">
+            <label for="text">Text to encrypt:</label>
+            <input type="text" id="text" required>
+            <br>
+            <label for="shift">Shift value (1-25):</label>
+            <input type="number" id="shift" min="1" max="25" required>
+            <br>
+            <button type="submit">Encrypt</button>
+        </form>
+        <p id="result"></p>
+
+        <script type="module" src="script.js"></script>
+    </body>
+
 </html>

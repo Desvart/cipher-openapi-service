@@ -1,4 +1,4 @@
-function encrypt(text, shift) {
+export function encrypt(text, shift) {
     if (typeof text !== 'string' || !Number.isInteger(shift) || shift < 1 || shift > 25) {
         throw new Error('Invalid input');
     }
@@ -16,5 +16,3 @@ function encrypt(text, shift) {
         })
         .join('');
 }
-
-module.exports = { encrypt };

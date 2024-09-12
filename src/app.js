@@ -1,4 +1,4 @@
-const { createServer } = require('./infra/server');
+import createServer from './infra/server.js';
 
 const port = process.env.PORT || 3000;
 const app = createServer();
