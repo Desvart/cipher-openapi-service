@@ -1,0 +1,17 @@
+{
+  "name": "cipher-openapi-service",
+  "version": "1.0.0",
+  "description": "A simple cipher encryption service",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Desvart/cipher-openapi-service.git"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "latest"
+  }
+}
