@@ -1,12 +1,40 @@
 openapi: 3.0.0
 info:
   title: Caesar Cipher Service
-  version: 1.0.0
+  version: 1.1.0
   description: A simple service to encrypt strings using the Caesar cipher
 paths:
   /encrypt:
+    get:
+      summary: Encrypt a short string
+      parameters:
+        - in: query
+          name: text
+          required: true
+          schema:
+            type: string
+            maxLength: 50
+        - in: query
+          name: shift
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 25
+      responses:
+        '200':
+          description: Successful encryption
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  encryptedText:
+                    type: string
+        '400':
+          description: Invalid input
     post:
-      summary: Encrypt a string
+      summary: Encrypt a longer string
       requestBody:
         required: true
         content:

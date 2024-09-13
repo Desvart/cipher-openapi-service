@@ -4,23 +4,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cipher Encryption</title>
+        <title>Caesar Cipher Encryption</title>
     </head>
 
     <body>
         <h1>Caesar Cipher Encryption</h1>
-        <form id="encryptForm">
-            <label for="text">Text to encrypt:</label>
-            <input type="text" id="text" required>
+
+        <h2>Short Text (GET method)</h2>
+        <form id="encryptFormGet">
+            <label for="textGet">Text to encrypt (max 50 characters):</label>
+            <input type="text" id="textGet" maxlength="50" required>
             <br>
-            <label for="shift">Shift value (1-25):</label>
-            <input type="number" id="shift" min="1" max="25" required>
+            <label for="shiftGet">Shift value (1-25):</label>
+            <input type="number" id="shiftGet" min="1" max="25" required>
             <br>
-            <button type="submit">Encrypt</button>
+            <button type="submit">Encrypt (GET)</button>
         </form>
+
+        <h2>Long Text (POST method)</h2>
+        <form id="encryptFormPost">
+            <label for="textPost">Text to encrypt:</label>
+            <textarea id="textPost" required></textarea>
+            <br>
+            <label for="shiftPost">Shift value (1-25):</label>
+            <input type="number" id="shiftPost" min="1" max="25" required>
+            <br>
+            <button type="submit">Encrypt (POST)</button>
+        </form>
+
         <p id="result"></p>
 
-        <script type="module" src="script.js"></script>
+        <script type="module" src="./script.js"></script>
     </body>
 
 </html>
