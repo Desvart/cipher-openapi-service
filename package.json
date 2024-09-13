@@ -1,11 +1,13 @@
 {
   "name": "cipher-openapi-service",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "A simple cipher encryption service",
-  "main": "src/app.js",
+  "main": "dist/app.js",
   "type": "module",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node dist/app.js",
+    "build": "tsc",
+    "dev2": "tsx src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -14,5 +16,11 @@
   "private": true,
   "dependencies": {
     "express": "latest"
+  },
+  "devDependencies": {
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }

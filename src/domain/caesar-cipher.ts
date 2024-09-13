@@ -1,5 +1,5 @@
-export function encrypt(text, shift) {
-    if (typeof text !== 'string' || !Number.isInteger(shift) || shift < 1 || shift > 25) {
+export function encrypt(text: string, shift: number) {
+    if (!Number.isInteger(shift) || shift < 1 || shift > 25) {
         throw new Error('Invalid input');
     }
 
