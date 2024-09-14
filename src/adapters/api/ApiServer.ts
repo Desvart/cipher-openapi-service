@@ -25,6 +25,9 @@ export class ApiServer {
     private configureRoutes(): void {
         this.app.get('/encrypt', this.handleGetEncrypt.bind(this));
         this.app.post('/encrypt', this.handlePostEncrypt.bind(this));
+
+        this.app.get('/decrypt', this.handleGetDecrypt.bind(this));
+        this.app.post('/decrypt', this.handlePostDecrypt.bind(this));
     }
 
     private handleGetEncrypt(req: Request, res: Response): void {
@@ -51,6 +54,35 @@ export class ApiServer {
             }
             const encryptedText = this.encryptionService.encryptLong(text, shift);
             res.json({ encryptedText });
+        } catch (error) {
+            res.status(400).json({ error: (error as Error).message });
+        }
+    }
+
+    private handleGetDecrypt(req: Request, res: Response): void {
+        const { text, shift } = req.query;
+
+        try {
+            if (typeof text !== 'string' || typeof shift !== 'string') {
+                throw new Error('Invalid input types');
+            }
+            const shiftNum = parseInt(shift, 10);
+            const decryptedText = this.encryptionService.decryptShort(text, shiftNum);
+            res.json({ decryptedText });
+        } catch (error) {
+            res.status(400).json({ error: (error as Error).message });
+        }
+    }
+
+    private handlePostDecrypt(req: Request, res: Response): void {
+        const { text, shift } = req.body;
+
+        try {
+            if (typeof text !== 'string' || typeof shift !== 'number') {
+                throw new Error('Invalid input types');
+            }
+            const decryptedText = this.encryptionService.decryptLong(text, shift);
+            res.json({ decryptedText });
         } catch (error) {
             res.status(400).json({ error: (error as Error).message });
         }
