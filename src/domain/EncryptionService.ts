@@ -1,5 +1,5 @@
-import { IEncryptionService } from './IEncryptionService.js';
-import { ICaesarCipher } from '../domain/ICaesarCipher.js';
+import { IEncryptionService } from './IEncryptionService';
+import { ICaesarCipher } from './ICaesarCipher';
 
 export class EncryptionService implements IEncryptionService {
     private cipher: ICaesarCipher;

@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { IEncryptionService } from '../../services/IEncryptionService.js';
+import { IEncryptionService } from '../../domain/IEncryptionService';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

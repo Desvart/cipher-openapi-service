@@ -1,5 +1,5 @@
 import { CaesarCipher } from './domain/CaesarCipher.js';
-import { EncryptionService } from './services/EncryptionService.js';
+import { EncryptionService } from './domain/EncryptionService';
 import { ApiServer } from './adapters/api/ApiServer.js';
 
 const port: number = parseInt(process.env.PORT || '3000', 10);
